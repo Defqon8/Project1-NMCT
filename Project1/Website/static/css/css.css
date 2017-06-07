@@ -1,0 +1,243 @@
+body{
+
+}
+#canvas1{
+    height: 975px;
+}
+
+footer{
+    position: relative;
+    left: -8px;
+    width: 100.9%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    top: 0px;
+    background-color: slategrey;
+}
+
+
+#Nav{
+    position: relative;
+    display: flex;
+    top: 50px;
+    text-decoration: none;
+    font-size: 2em;
+}
+
+#home a, #stats a , #funct a {
+    text-decoration: none;
+    color: black;
+}
+
+#home a:hover , #stats a:hover , #funct a:hover{
+    color: white;
+}
+
+#home{
+    position: relative;
+    right: -870px;
+    background-color: slategray;
+    padding-top: 65.5px;
+    padding-bottom: 65.5px;
+    padding-left:100px;
+    padding-right: 108.5px;
+}
+
+#stats{
+    position: relative;
+    right: -870px;
+    background-color: slategray;
+    padding-top: 65.5px;
+    padding-bottom: 65.5px;
+    padding-left: 58.5px;
+    padding-right: 108.5px;
+}
+
+#funct{
+    position: relative;
+    right: -870px;
+    background-color: slategray;
+    padding-top: 65.5px;
+    padding-bottom: 65.5px;
+    padding-left: 58.5px;
+    padding-right: 149px;
+}
+#logo{
+    top: -118.5px;
+    position: relative;
+    background-color: slategray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 275px;
+    padding-right: 10px;
+    left: -10px;
+}
+#Logo img{
+    top: -118.5px;
+    position: relative;
+    background-color: slategray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 275px;
+    padding-right: 10px;
+    left: -10px;
+}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    transition: 1s opacity;
+}
+
+#table1{
+    padding: 20px;
+    background-color: slategray;
+    position: relative;
+    left: 75px;
+    width: 500px;
+    top: 150px;
+
+}
+
+#table2{
+    padding: 20px;
+    background-color: slategray;
+    position: relative;
+    right: -950px;
+    width: 700px;
+    bottom: 325px;
+
+}
+
+#table3{
+    padding: 20px;
+    background-color: slategray;
+    position: relative;
+    right: -950px;
+    width: 700px;
+    bottom: 300px;
+
+}
+tr,td{
+    text-align: center;
+    width: 160px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: white;
+
+}
+
+th{
+    font-size: 25px;
+}
+
+#systemimage{
+    position: relative;
+    left: 870px;
+    top: 15px;
+}
+#canvas2{
+    height: -100px;
+}
+
+#Functions{
+    position: relative;
+    top: -445px;
+    left: 135px;
+}
+#Functions p{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 200px;
+    padding-right: 30px;
+    background-color: slategray;
+    text-align: right;
+    width: 248px;
+}
+
+#legend{
+    padding: 10px;
+    background-color: slategray;
+    position: relative;
+    top: -370px;
+    left: 135px;
+    width: 170px;
+}
+
+#Functions button{
+    position: relative;
+    top: 158px;
+    left: -15px;
+}
+
+/*-----------------------button-------------------------*/
+label{
+    top: 78px;
+    left: 50px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

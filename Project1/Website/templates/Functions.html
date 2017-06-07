@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+    <link rel="stylesheet" href="../static/css/css.css">
+
+
+</head>
+    <video poster="city.png" id="bgvid" playsinline autoplay muted loop>
+        <source src="../static/images/Background.mp4" type="video/mp4">
+    </video>
+<body>
+
+    <header>
+        <div id="Nav">
+            <div id="home">
+                <a href="http://169.254.11.12:5000/">Homepage</a>
+            </div>
+            <div id="stats">
+                <a href="http://169.254.11.12:5000/Statistics">Statistics</a>
+            </div>
+            <div id="funct">
+                <a href="http://169.254.11.12:5000/Functions">Functions</a>
+            </div>
+        </div>
+        <div id="Logo">
+            <a href="http://169.254.11.12:5000/">
+                <img width="148" height="148" src="../static/images/Logo.png" />
+            </a>
+        </div>
+    </header>
+    <div id="canvas2"></div>
+    <div id="systemimage">
+        <img height="400" src="../static/images/disabled.png"/>
+    </div>
+
+    <div id="Functions">
+
+        <label class="switch">
+            <input type="checkbox">
+            <div class="slider round"></div>
+        </label>
+
+        <button type="button" onclick="alert('System Reset')">Reset System</button>
+        <p>Activate / Deactivate the alarm system</p>
+        <p>Reset the alarm system</p>
+    </div>
+    <div id="legend">
+        <p>Green: Activated</p>
+        <p>Red: Alarmed</p>
+        <p>Black: Deactivated</p>
+    </div>
+
+</body>
+    <footer>
+        <div id="Footer">
+            Made By Bram Robyn
+        </div>
+    </footer>
+</html>
