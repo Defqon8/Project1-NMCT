@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>Functions</title>
     <link rel="stylesheet" href="../static/css/css.css">
-
+    <script type="text/javascript" src="http://knockoutjs.com/downloads/knockout-3.2.0.js"></script>
 
 </head>
     <video poster="city.png" id="bgvid" playsinline autoplay muted loop>
-        <source src="../static/images/Background.mp4" type="video/mp4">
+        <source src="../static/images/No Copyright, Copyright Free Videos, Motion Graphics, Movies, Background, Animation, Clips, Download (2).mp4" type="video/mp4">
     </video>
 <body>
 
@@ -30,31 +30,59 @@
             </a>
         </div>
     </header>
-    <div id="canvas2"></div>
+
     <div id="systemimage">
+        <!-- ko if: checkboxDisabled() -->
         <img height="400" src="../static/images/disabled.png"/>
+        <!-- /ko -->
+        <!-- ko if: !checkboxDisabled() -->
+        <img height="400" src="../static/images/Enabled.png"/>
+        <!-- /ko -->
     </div>
 
     <div id="Functions">
 
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" data-bind="click: toggleCheckbox">
             <div class="slider round"></div>
         </label>
 
-        <button type="button" onclick="alert('System Reset')">Reset System</button>
+
+        <form id="button" action="http://169.254.11.12:5000/Functions">
+            <input type="submit" value="Reset System" />
+        </form>
+        <!--so default would be-->
+        <!--self.systemAlarmed = ko.observable(false);-->
+        <!--and then u need a funciton to alarm-->
+        <!--self.alarmSystem = function() {-->
+        <!--self.systemAlarmed(true);-->
+        <!--};-->
+
         <p>Activate / Deactivate the alarm system</p>
         <p>Reset the alarm system</p>
     </div>
+
     <div id="legend">
         <p>Green: Activated</p>
         <p>Red: Alarmed</p>
         <p>Black: Deactivated</p>
     </div>
 
+    <script type="text/javascript">
+        var ViewModel = function() {
+            var self = this;
+            self.checkboxDisabled = ko.observable(true);
+            self.toggleCheckbox = function(){
+                self.checkboxDisabled(!self.checkboxDisabled())
+                return true;
+            };
+        };
+        ko.applyBindings(new ViewModel());
+    </script>
+
 </body>
     <footer>
-        <div id="Footer">
+        <div id="Footer3">
             Made By Bram Robyn
         </div>
     </footer>

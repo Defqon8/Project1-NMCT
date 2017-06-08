@@ -1,5 +1,5 @@
 body{
-
+    max-width: 1827px;
 }
 #canvas1{
     height: 975px;
@@ -12,9 +12,11 @@ footer{
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
-    top: 0px;
+    top: 10px;
     background-color: slategrey;
 }
+
+
 
 
 #Nav{
@@ -112,7 +114,7 @@ video {
     padding: 20px;
     background-color: slategray;
     position: relative;
-    right: -950px;
+    right: -870px;
     width: 700px;
     bottom: 325px;
 
@@ -122,7 +124,7 @@ video {
     padding: 20px;
     background-color: slategray;
     position: relative;
-    right: -950px;
+    right: -870px;
     width: 700px;
     bottom: 300px;
 
@@ -145,16 +147,15 @@ th{
 #systemimage{
     position: relative;
     left: 870px;
-    top: 15px;
-}
-#canvas2{
-    height: -100px;
+    top: 115px;
+    max-width: 800px;
 }
 
 #Functions{
     position: relative;
-    top: -445px;
-    left: 135px;
+    top: -364px;
+    left: 80px;
+    max-width: 900px;
 }
 #Functions p{
     padding-top: 30px;
@@ -170,21 +171,21 @@ th{
     padding: 10px;
     background-color: slategray;
     position: relative;
-    top: -370px;
-    left: 135px;
+    top: -290px;
+    left: 80px;
     width: 170px;
 }
 
-#Functions button{
+#Functions #button{
     position: relative;
     top: 158px;
-    left: -15px;
+    left: 30px;
 }
 
 /*-----------------------button-------------------------*/
 label{
-    top: 78px;
-    left: 50px;
+    top: 96px;
+    left: 30px;
 }
 
 .switch {
