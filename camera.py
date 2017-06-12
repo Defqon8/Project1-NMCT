@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import time
+
 buzzer_pin = 16
 led_pin = 21
-
 
 notes = {
     'E7': 2637,
