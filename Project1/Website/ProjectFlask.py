@@ -1,10 +1,10 @@
 from flask import Flask
 from flask import render_template
+from DbClass import DbClass
 import os
 
+
 app = Flask(__name__)
-
-
 
 @app.route('/')
 def homepage():
