@@ -59,8 +59,8 @@ def setup():
 def destroy():
     GPIO.cleanup()
 
-def play(alarm, tempo, pace=0.800):
-    print ("INTRUDER ALOERT!")
+def play(GPIO, tempo, pace=0.800):
+    print ("INTRUDER ALERT!")
     for i in range(0, len(alarm)):
 
         noteDuration = pace / tempo[i]
@@ -73,6 +73,6 @@ if __name__ == '__main__':
     try:
         setup()
         play(alarm, tempo, 0.800)
-        destroy()
+        GPIO.output(led_pin, GPIO.LOW), destroy()
     except KeyboardInterrupt:
-        destroy()
+        GPIO.output(led_pin, GPIO.LOW), destroy()
