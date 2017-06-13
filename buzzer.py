@@ -5,7 +5,7 @@ buzzer_pin = 16
 led_pin = 21
 
 notes = {
-    'E7': 2637,
+    'E7': 4500,
 }
 
 alarm = [
