@@ -4,6 +4,13 @@ body{
 #canvas1{
     height: 975px;
 }
+#cam img{
+    height: 900px;
+    width: 1600px;
+    position: relative;
+    left: 100px;
+    top: -20px;
+}
 
 footer{
     position: relative;
