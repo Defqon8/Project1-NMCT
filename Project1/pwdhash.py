@@ -1,4 +1,4 @@
-from Project1.Website import dbconn
+from Project1.Website import DbClass
 
 day_month = []
 minute_hour = []
@@ -15,11 +15,11 @@ parameter4 = 0
 
 
 def write_TimesDisabled():
-    db = dbconn.DbConnection()
+    db = DbClass.DbClass()
 
     sql1 = ('SELECT TimesDisabled."Day", TimesDisabled."Month" from TimesDisabled')
 
-    TimesAlarmedID = db.query(sql1)
+    TimesAlarmedID = db.getDataFromDatabaseMetVoorwaarde(sql1)
 
     print(TimesAlarmedID)
 
@@ -33,7 +33,7 @@ def write_TimesDisabled():
         'new_month': day_month[1],
     }
 
-    db.execute(sql2, params1)
+    db.setDataToDatabase(sql2, params1)
 
     day_month.remove(day_month[0])
     day_month.remove(day_month[0])
@@ -50,11 +50,11 @@ def getTimesDisabled(self, params1):
 
 
 def write_TimeOfEnabled():
-    db = dbconn.DbConnection()
+    db = DbClass.DbClass()
 
     sql3 = ('SELECT TimeOfEnabled.Minutes, TimeOfEnabled.Hours from TimeOfEnabled')
 
-    TimesAlarmedID = db.query(sql3)
+    TimesAlarmedID = db.getDataFromDatabaseMetVoorwaarde(sql3)
 
     print(TimesAlarmedID)
 
@@ -68,7 +68,7 @@ def write_TimeOfEnabled():
         'new_hour': minute_hour[1],
     }
 
-    db.execute(sql4, params2)
+    db.setDataToDatabase(sql4, params2)
 
     minute_hour.remove(minute_hour[0])
     minute_hour.remove(minute_hour[0])
@@ -76,11 +76,11 @@ def write_TimeOfEnabled():
  # ---------------------------------------------------------------------------------------------------------
 
 def write_TimeOfDisabled():
-    db = dbconn.DbConnection()
+    db = DbClass.DbClass()
 
     sql5 = ('SELECT TimeOfDisabled.Minutes, TimeOfDisabled.Hours from TimeOfDisabled')
 
-    TimesAlarmedID = db.query(sql5)
+    TimesAlarmedID = db.getDataFromDatabaseMetVoorwaarde(sql5)
 
     print(TimesAlarmedID)
 
@@ -94,7 +94,7 @@ def write_TimeOfDisabled():
         'new_hour': minute_hour2[1],
     }
 
-    db.execute(sql6, params3)
+    db.setDataToDatabase(sql6, params3)
 
     minute_hour2.remove(minute_hour2[0])
     minute_hour2.remove(minute_hour2[0])
@@ -102,11 +102,11 @@ def write_TimeOfDisabled():
  # ---------------------------------------------------------------------------------------------------------
 
 def write_TimeAlarmed():
-    db = dbconn.DbConnection()
+    db = DbClass.DbClass()
 
     sql9 = ('SELECT TimesAlarmed.TimesPerMonth, TimesAlarmed.TimesPerYear from TimesAlarmed')
 
-    TimesAlarmedID = db.query(sql9)
+    TimesAlarmedID = db.getDataFromDatabaseMetVoorwaarde(sql9)
 
     print(TimesAlarmedID)
 
@@ -120,7 +120,7 @@ def write_TimeAlarmed():
         'new_year': month_year[1],
     }
 
-    db.execute(sql10, params4)
+    db.setDataToDatabase(sql10, params4)
 
     month_year.remove(month_year[0])
     month_year.remove(month_year[0])
@@ -130,11 +130,11 @@ def write_TimeAlarmed():
 # ---------------------------------------------------------------------------------------------------------
 
 def write_TimeOfDisabled():
-    db = dbconn.DbConnection()
+    db = DbClass.DbClass()
 
     sql7 = ('SELECT TimeOfDisabled.Minutes, TimeOfDisabled.Hours from TimeOfDisabled')
 
-    TimesAlarmedID = db.query(sql7)
+    TimesAlarmedID = db.getDataFromDatabaseMetVoorwaarde(sql7)
 
     print(TimesAlarmedID)
 
@@ -148,7 +148,7 @@ def write_TimeOfDisabled():
         'new_hour': minute_hour[1],
     }
 
-    db.execute(sql8, params4)
+    db.setDataToDatabase(sql8, params4)
 
     minute_hour.remove(minute_hour[0])
     minute_hour.remove(minute_hour[0])
