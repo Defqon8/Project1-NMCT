@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template
-from DbClass import DbClass
+from dbconn import DbConnection
 import os
 
 
@@ -13,7 +13,12 @@ def homepage():
 
 @app.route('/Statistics')
 def statistics():
-    return render_template('Statistics.html')
+    db=DbConnection()
+    gegevens1=db.getTimesAlarmed(),
+    gegevens2=db.getTimeOfEnabled(),
+    gegevens3=db.getTimeOfDisabled(),
+    gegevens4=db.getTimesDisabled()
+    return render_template('Statistics.html',gegevens1, gegevens2, gegevens3, gegevens4)
 
 
 @app.route('/Functions')
