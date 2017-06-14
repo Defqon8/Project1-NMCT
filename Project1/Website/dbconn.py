@@ -1,3 +1,4 @@
+
 class DbConnection:
     def __init__(self):
         import mysql.connector as connector
@@ -17,8 +18,7 @@ class DbConnection:
         try:
             cursor = self.__connection.cursor(dictionary=dictionary)
         except TypeError:
-            print("De optie 'dictionary vereist mysql-connector v2.x.x, kan je installeren met: \n "
-                  "sudo pip3 install mysql-connector==2.1.4")
+            print("Jouw versie van mysql-connector ondersteunt de optie dictionary niet :(")
             cursor = self.__connection.cursor()
         cursor.execute(query, data)
         result = cursor.fetchall()

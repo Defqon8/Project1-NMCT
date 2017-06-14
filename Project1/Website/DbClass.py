@@ -1,16 +1,15 @@
-# class DbClass:
-#     def __init__(self):
-#         import mysql.connector as connector
+class DbClass:
+    def __init__(self):
+        import mysql.connector as connector
+        self.__dsn = {
+            "host": "raspberrypi",
+            "user": "pi",
+            "passwd": "raspberry",
+            "db": "KippenHokdb"
+        }
 #
-#         self.__dsn = {
-#             "host": "raspberrypi",
-#             "user": "pi",
-#             "passwd": "raspberry",
-#             "db": "KippenHokdb"
-#         }
-#
-#         self.__connection = connector.connect(**self.__dsn)
-#         self.__cursor = self.__connection.cursor()
+        self.__connection = connector.connect(**self.__dsn)
+        self.__cursor = self.__connection.cursor()
 #
 #     def getTimeOfDisabled(self):
 #         a = "SELECT TimeOfDisabled.Hours, TimeOfDisabled.Minutes from TimeOfDisabled"  # selecteren
