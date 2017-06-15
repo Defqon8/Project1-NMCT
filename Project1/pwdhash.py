@@ -1,25 +1,27 @@
-from Project1.Website import DbClass
+from Project1.Website import dbconn
 
 day_month = []
 minute_hour = []
 minute_hour2 = []
 month_year = []
+endial = []
 
 parameter1 = 0
 parameter2 = 0
 parameter3 = 0
 parameter4 = 0
+parameter5 = 0
 
 
 # ---------------------------------------------------------------------------------------------------------
 
 
 def write_TimesDisabled():
-    db = DbClass.DbClass()
+    db = dbconn.DbConnection()
 
-    sql1 = ('SELECT TimesDisabled."Day", TimesDisabled."Month" from TimesDisabled')
+    sql1 = ('SELECT Day, Month from TimesDisabled')
 
-    TimesAlarmedID = db.getDataFromDatabaseMetVoorwaarde(sql1)
+    TimesAlarmedID = db.query(sql1)
 
     print(TimesAlarmedID)
 
@@ -33,14 +35,14 @@ def write_TimesDisabled():
         'new_month': day_month[1],
     }
 
-    db.setDataToDatabase(sql2, params1)
+    db.execute(sql2, params1)
 
     day_month.remove(day_month[0])
     day_month.remove(day_month[0])
 
 
 def getTimesDisabled(self, params1):
-    a = 'SELECT TimesDisabled."Day", TimesDisabled."Month" FROM TimesDisabled'
+    a = 'SELECT Day, Month FROM TimesDisabled'
     self.__cursor.execute(a)
     TimesDisabled = self.__cursor.fetchall()
     self.__cursor.close()
@@ -50,11 +52,11 @@ def getTimesDisabled(self, params1):
 
 
 def write_TimeOfEnabled():
-    db = DbClass.DbClass()
+    db = dbconn.DbConnection()
 
-    sql3 = ('SELECT TimeOfEnabled.Minutes, TimeOfEnabled.Hours from TimeOfEnabled')
+    sql3 = ('SELECT Minutes, Hours from TimeOfEnabled')
 
-    TimesAlarmedID = db.getDataFromDatabaseMetVoorwaarde(sql3)
+    TimesAlarmedID = db.query(sql3)
 
     print(TimesAlarmedID)
 
@@ -68,7 +70,7 @@ def write_TimeOfEnabled():
         'new_hour': minute_hour[1],
     }
 
-    db.setDataToDatabase(sql4, params2)
+    db.execute(sql4, params2)
 
     minute_hour.remove(minute_hour[0])
     minute_hour.remove(minute_hour[0])
@@ -76,11 +78,11 @@ def write_TimeOfEnabled():
  # ---------------------------------------------------------------------------------------------------------
 
 def write_TimeOfDisabled():
-    db = DbClass.DbClass()
+    db = dbconn.DbConnection()
 
-    sql5 = ('SELECT TimeOfDisabled.Minutes, TimeOfDisabled.Hours from TimeOfDisabled')
+    sql5 = ('SELECT Minutes, Hours from TimeOfDisabled')
 
-    TimesAlarmedID = db.getDataFromDatabaseMetVoorwaarde(sql5)
+    TimesAlarmedID = db.query(sql5)
 
     print(TimesAlarmedID)
 
@@ -94,7 +96,7 @@ def write_TimeOfDisabled():
         'new_hour': minute_hour2[1],
     }
 
-    db.setDataToDatabase(sql6, params3)
+    db.execute(sql6, params3)
 
     minute_hour2.remove(minute_hour2[0])
     minute_hour2.remove(minute_hour2[0])
@@ -102,11 +104,11 @@ def write_TimeOfDisabled():
  # ---------------------------------------------------------------------------------------------------------
 
 def write_TimeAlarmed():
-    db = DbClass.DbClass()
+    db = dbconn.DbConnection()
 
-    sql9 = ('SELECT TimesAlarmed.TimesPerMonth, TimesAlarmed.TimesPerYear from TimesAlarmed')
+    sql9 = ('SELECT TimesPerMonth, TimesPerYear from TimesAlarmed')
 
-    TimesAlarmedID = db.getDataFromDatabaseMetVoorwaarde(sql9)
+    TimesAlarmedID = db.query(sql9)
 
     print(TimesAlarmedID)
 
@@ -120,38 +122,35 @@ def write_TimeAlarmed():
         'new_year': month_year[1],
     }
 
-    db.setDataToDatabase(sql10, params4)
+    db.execute(sql10, params4)
 
     month_year.remove(month_year[0])
     month_year.remove(month_year[0])
-
 
 
 # ---------------------------------------------------------------------------------------------------------
+def write_systemstatus():
+    db = dbconn.DbConnection()
 
-def write_TimeOfDisabled():
-    db = DbClass.DbClass()
+    sq22 = ('SELECT Alarmed, Disabled, Enabled from SystemStatus')
 
-    sql7 = ('SELECT TimeOfDisabled.Minutes, TimeOfDisabled.Hours from TimeOfDisabled')
+    StatusID = db.query(sq22)
 
-    TimesAlarmedID = db.getDataFromDatabaseMetVoorwaarde(sql7)
+    print(StatusID)
 
-    print(TimesAlarmedID)
-
-    sql8 = (
-        'INSERT INTO TimeOfDisabled (Minute, Hour) '
-        'VALUES ( %(new_Minute)s, %(new_Hour)s );'
+    sql30 = (
+        'INSERT INTO SystemStatus (Alarmed, Enabled, Disabled) '
+        'VALUES ( %(new_alarmed)s, %(new_enabled)s, %(new_disabled)s );'
     )
 
-    params4 = {
-        'new_minute': minute_hour[0],
-        'new_hour': minute_hour[1],
+    params5 = {
+        'new_alarmed': endial[0],
+        'new_enabled': endial[1],
+        'new_Disabled': endial[3]
     }
 
-    db.setDataToDatabase(sql8, params4)
+    db.execute(sql30, params5)
 
-    minute_hour.remove(minute_hour[0])
-    minute_hour.remove(minute_hour[0])
-
-
-# ---------------------------------------------------------------------------------------------------------
+    endial.remove(endial[0])
+    endial.remove(endial[0])
+    endial.remove(endial[0])
