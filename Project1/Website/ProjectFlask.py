@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
-from dbconn import DbConnection
+from Project1.Website.dbconn import DbConnection
+
 import os
 
 app = Flask(__name__)
@@ -12,13 +13,33 @@ def homepage():
 
 @app.route('/Statistics')
 def statistics():
-    db=DbConnection
-    gegevens1=('SELECT Minutes, Hours FROM TimeOfEnabled')
-    gegevens2=('SELECT Minutes, Hours FROM TimeOfDisabled')
-    gegevens3=('SELECT Day, Month FROM TimesDisabled')
-    gegevens4=('SELECT TimesPerMonth, TimesPerYear FROM TimesAlarmed')
-    gegevens5=('SELECT "Alarmed" FROM SystemStatus')
-    return render_template('Statistics.html', gegevens1=gegevens1, gegevens2=gegevens2, gegevens3=gegevens3, gegevens4=gegevens4, gegevens5=gegevens5)
+    db=DbConnection()
+    sql3=("SELECT Minutes, Hours FROM TimeOfEnabled")
+    TimeOfEnabled=db.query(sql3)
+
+    sql5=('SELECT Minutes, Hours FROM TimeOfDisabled')
+    TimeOfDisabled=db.query(sql5)
+
+    sql1=('SELECT Day, Month FROM TimesDisabled')
+    TimesDisabled=db.query(sql1)
+
+    sql9=('SELECT TimesPerMonth, TimesPerYear FROM TimesAlarmed')
+    TimesAlarmed=db.query(sql9)
+
+    sql22=('SELECT Alarmed, Enabled, Disabled FROM SystemStatus')
+    SystemStatus=db.query(sql22)
+
+    return render_template('Statistics.html', TimeOfEnabled=TimeOfEnabled, TimeOfDisabled=TimeOfDisabled, TimesDisabled=TimesDisabled, TimesAlarmed=TimesAlarmed, SystemStatus=SystemStatus)
+
+# @app.route('/Statistics')
+# def statistics():
+#     db=DbClass()
+#     var = db.get_systemstatus()
+#     for i in var:
+#         print(i[0])
+#         print(i[1])
+#     gegevens1=db.get_systemstatus()
+#     return render_template('Statistics.html', gegevens1=gegevens1)
 
 
 @app.route('/Functions')

@@ -41,12 +41,19 @@ def write_TimesDisabled():
     day_month.remove(day_month[0])
 
 
-def getTimesDisabled(self, params1):
-    a = 'SELECT Day, Month FROM TimesDisabled'
-    self.__cursor.execute(a)
-    TimesDisabled = self.__cursor.fetchall()
-    self.__cursor.close()
-    return TimesDisabled
+# def getTimesDisabledDay(self, params1):
+#     a = 'SELECT Month FROM TimesDisabled'
+#     self.__cursor.execute(a)
+#     TimesDisabled = self.__cursor.fetchall()
+#     self.__cursor.close()
+#     return TimesDisabledDay
+#
+# def getTimesDisabledMonth(self, params1):
+#     a = 'SELECT Day FROM TimesDisabled'
+#     self.__cursor.execute(a)
+#     TimesDisabled = self.__cursor.fetchall()
+#     self.__cursor.close()
+#     return TimesDisabledMonth
 
 # ---------------------------------------------------------------------------------------------------------
 
@@ -132,9 +139,9 @@ def write_TimeAlarmed():
 def write_systemstatus():
     db = dbconn.DbConnection()
 
-    sq22 = ('SELECT Alarmed, Disabled, Enabled from SystemStatus')
+    sql22 = ('SELECT Alarmed, Disabled, Enabled from SystemStatus')
 
-    StatusID = db.query(sq22)
+    StatusID = db.query(sql22)
 
     print(StatusID)
 

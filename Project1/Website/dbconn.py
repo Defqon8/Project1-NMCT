@@ -25,7 +25,7 @@ class DbConnection:
         cursor.close()
         return result
 
-    # voor schrijven (INSERT, UPDATE, ...)
+# voor schrijven (INSERT, UPDATE, ...)
     def execute(self, query: str, data: dict = None):
         cursor = self.__connection.cursor()
         cursor.execute(query, data)
