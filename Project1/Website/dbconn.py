@@ -1,4 +1,4 @@
-
+import time
 class DbConnection:
     def __init__(self):
         import mysql.connector as connector
@@ -9,7 +9,7 @@ class DbConnection:
             "db": "KippenHokdb",
         }
         self.__connection = connector.connect(**self.__dsn)
-
+    time.sleep(5)
 
     # voor lezen (SELECT)
     # met query(..., return_dict=True) krijg je een dictionary terug,

@@ -59,7 +59,7 @@ def write_TimesDisabled():
 
 
 def write_TimeOfEnabled():
-    db = dbconn.DbConnection()
+        db = dbconn.DbConnection()
 
     sql3 = ('SELECT Minutes, Hours from TimeOfEnabled')
 

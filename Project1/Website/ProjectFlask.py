@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template
-from Project1.Website.dbconn import DbConnection
+from dbconn import DbConnection
 
 import os
 
