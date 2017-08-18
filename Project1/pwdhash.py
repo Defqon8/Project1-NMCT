@@ -1,5 +1,6 @@
 from Project1.Website import dbconn
 
+
 day_month = []
 minute_hour = []
 minute_hour2 = []
@@ -59,7 +60,7 @@ def write_TimesDisabled():
 
 
 def write_TimeOfEnabled():
-        db = dbconn.DbConnection()
+    db = dbconn.DbConnection()
 
     sql3 = ('SELECT Minutes, Hours from TimeOfEnabled')
 

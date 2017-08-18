@@ -1,7 +1,8 @@
+import mysql.connector as connector
 import time
 class DbConnection:
     def __init__(self):
-        import mysql.connector as connector
+
         self.__dsn = {
             "host": "169.254.11.12",
             "user": "bram",
