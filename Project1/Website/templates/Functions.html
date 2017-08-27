@@ -43,9 +43,12 @@
     <div id="Functions">
 
         <label class="switch">
-            <input type="checkbox" data-bind="click: toggleCheckbox" onclick="startsystem">
-            <div class="slider round"></div>
+            <form action = "PythonShell" class="switch">
+                <input type = "checkbox" data-bind="click: toggleCheckbox" value = "activate" onclick="PythonShell">
+                <div class="slider round"></div>
+            </form>
         </label>
+
 
 
         <form id="button" action="http://169.254.11.12:5000/Functions">

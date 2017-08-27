@@ -18,3 +18,11 @@ window.addEventListener('load', function(e) {
   }, false);
 
 }, false);
+
+// run alarm when clicking checkbox
+
+var PythonShell = require('PythonShell');
+PythonShell.run('sensor.py', function (err) {
+  if (err) throw err;
+  console.log('finished');
+});
